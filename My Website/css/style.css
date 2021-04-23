@@ -1,0 +1,117 @@
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+
+body
+{
+    margin: 0;
+    color: #777;
+}
+h1
+{
+    color: gray;
+    margin: 50px auto 0 auto;
+    font-family: "lato", sans-serif;
+    font-size: 90px;
+}
+
+h2
+{
+     font-family: "lato", sans-serif;
+    color: dimgray;
+    font-size: 2.5rem;
+}
+
+
+
+.skill-row
+{
+    width: 50%;
+    margin: 100px auto 100px auto;
+    line-height: 2;
+    text-align: left;
+}
+
+hr
+{
+    border-style: none;
+    border-top-style: dashed;
+    border-color: darkslategray;
+    width: 50%;
+    border-width: 5px;
+}
+
+.img1
+{
+    width: 30%;
+    border-radius: 50%;
+    float: left;
+    margin-right: 30px;
+}
+
+.img2
+{
+    float: right;
+    width: 30%;
+    border-radius: 50%;
+    margin-left: 20px;
+}
+
+.btn
+{
+    background-color: navy; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.div1
+{
+    color: #777;
+    text-align: center;
+    padding-top: 100px;
+}
+
+.img
+{
+    width: 10%;
+    border-radius: 50%;
+
+}
+
+.bottom-container
+{
+    /*background-color: #cef5ff;*/
+    text-align: center;
+}
+
+.middle-container
+{
+    /*background-color: #cef5ff;*/
+    text-align: center;
+}
+
+.bottom-cloud
+{
+    position: absolute;
+}
+
+.top-cloud
+{
+    margin-top: 0;
+    position: relative;
+    left: 290px;
+}
+
+.span1
+{
+    text-decoration: underline;
+}
+
+.bgimg-1, .bgimg-2, .bgimg-3 {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+    background-size: cover;}

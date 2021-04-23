@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 1</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+</head>
+<body>
+<h1>TASK 1:</h1>
+<h2>Software Used: <br></h2>
+<p>
+<ol>
+    <li>Docker</li>
+    <li>Visual Studio Code</li>
+    <li>Qemu</li>
+</ol>
+<hr style="width: 100%">
+<ul>
+    <li>First Of all we created a Linux image using Docker.<br>
+    <h3>What is Docker?</h3>
+        Docker is an open platform for developing, shipping, and running applications.
+        Docker enables you to separate your applications from your infrastructure so you can deliver software quickly.
+        With Docker, you can manage your infrastructure in the same ways you manage your applications.
+        By taking advantage of Docker’s methodologies for shipping, testing, and deploying code quickly,
+        you can significantly reduce the delay between writing code and running it in production.</li>
+    <br>
+    <li>We created a docker image using <b>docker build buildenv -t myos-buildenv</b></li>
+    <br>
+    <li>Different Files Of Our OS are as follow:
+    <ol>
+        <li>The <b>header.asm</b> file contained all the data that was to be included in operating system binary.</li>
+        <br>
+        <li>Our operating system's entry point was the <b>Main.asm</b> file.
+            We built a stack in it to store all of the data from the local function calls.
+            It also aided in the execution of c code that dealt with all stack manipulation data.
+            We tested for multiboot, CPU id (to see if the CPU supports long mode),
+            and then long mode to switch our kernel operating system to 64 bit mode.
+            Page tables were also built inside main.asm file.</li>
+        <br>
+        <li>The <b>Linker.ld</b> file explained how to connect our operating systems.
+            We specified the entry point and all parts of our binary in this file, setting the current address to 1 megabyte,
+            which means that our operating system will start with 1 megabyte of data.
+            The first section of the binary file was boot, which contained the multiboot header,
+            and the second section was text, which contained all of our CPU instructions.
+        </li>
+        <br>
+        <li>We specified the grub.cfg file in order to generate the final iso file,
+            and we were looking for <b>kernel.bin</b> in the boot folder.</li>
+        <br>
+        <li>In <b>Make file</b>, We generated two variables in the make file that contained all of the source and object files in src/impl/x86 64/boot.
+            Following that, we specified the commands for converting our object files to source files.
+            In addition, we created a directory to store our compiled file.The assembly software was compiled using Nasm.
+            We wrote a custom command build-x86 64 after writing the code for compiling the file,
+            which ran when only our object file was modified. We made a directory to save our iso file in. Finally,
+            we produced our iso file with the grub rescue command.</li>
+        <br>
+        <li>Our operating system was converted to 64-bit mode using the <b>Main64.asm</b> file.</li>
+        <br>
+        <li>The foreground colour, background colour, and text to be displayed on the screen was included in the <b>Main.c</b> file.</li>
+        <br>
+        <li>A header file called <b>Print.h</b> was used to build some methods and an enum of colours.</li>
+        <br>
+        <li>The <b>Print.c</b> file included a custom print functions (with the help of them we printed SEECS), as well as some related methods.</li>
+    </ol>
+    </li>
+    <br>
+    <li>In the end, we ran qemu for simulating our operating system through the command
+        <b>qemu-system-x86_64 -cdrom dist/x86_64/kernel.iso</b></li>
+</ul>
+</p>
+<br>
+<a class="btn" href="index.html">Back</a>
+</body>
+</html>
